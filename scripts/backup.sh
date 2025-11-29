@@ -8,7 +8,7 @@ COMMIT_MESSAGE=${1:-"update"}
 
 # List of directories to process
 DIRS=(
-  "/storage/emulated/0/vtx_hunt"
+  "/storage/emulated/0/hunt_stuffs"
   "$HOME/info_dis"
   "$HOME/targets"
   "/storage/emulated/0/Obsidian"
