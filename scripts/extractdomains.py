@@ -2,8 +2,8 @@ import re
 import argparse
 import os
 
-def extract_and_process_domains(input_file):
-    """Extract and process domains from a single input file and overwrite the file."""
+def extract_and_process_domains(input_file, mode='print'):
+    """Extract and process domains from a single input file and either print to stdout or overwrite the file."""
     try:
         # Pattern to match "http://", "https://", "http://www." or "https://www."
         pattern = re.compile(r'https?://(?:www\.)?')
@@ -20,10 +20,15 @@ def extract_and_process_domains(input_file):
                     domain = domain.split('/')[0]
                     final_domains.append(domain)
 
-        # Step 3: Overwrite the input file with the final cleaned domains
-        with open(input_file, 'w') as outfile:
+        if mode == 'print':
+            # Print the final cleaned domains to stdout
             for domain in final_domains:
-                outfile.write(domain + '\n')
+                print(domain)
+        elif mode == 'overwrite':
+            # Overwrite the input file with the final cleaned domains
+            with open(input_file, 'w') as outfile:
+                for domain in final_domains:
+                    outfile.write(domain + '\n')
 
     except Exception as e:
         print(f"Error processing file '{input_file}': {e}")
@@ -39,7 +44,7 @@ def process_directory(directory):
         for filename in os.listdir(directory):
             file_path = os.path.join(directory, filename)
             if os.path.isfile(file_path):
-                extract_and_process_domains(file_path)
+                extract_and_process_domains(file_path, mode='overwrite')
         print("Directory processing completed successfully.")
     except Exception as e:
         print(f"Error processing directory '{directory}': {e}")
@@ -48,8 +53,8 @@ def process_directory(directory):
 def main():
     parser = argparse.ArgumentParser(description="Extract and process domains from clustered URLs.")
     group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument('-i', '--input', help="Input text file with clustered URLs.")
-    group.add_argument('-d', '--directory', help="Directory containing text files to process.")
+    group.add_argument('-i', '--input', help="Input text file with clustered URLs. Output will be printed to stdout; redirect to a file using > output.txt.")
+    group.add_argument('-d', '--directory', help="Directory containing text files to process. Files will be processed in place, overwriting them with the extracted domains.")
 
     args = parser.parse_args()
 
@@ -57,8 +62,7 @@ def main():
         if not os.path.isfile(args.input):
             print(f"Error: '{args.input}' is not a valid file.")
             return
-        extract_and_process_domains(args.input)
-        print("File processing completed successfully.")
+        extract_and_process_domains(args.input, mode='print')
     elif args.directory:
         process_directory(args.directory)
 
