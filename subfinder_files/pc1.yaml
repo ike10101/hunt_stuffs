@@ -34,18 +34,23 @@ securitytrails7:
 - 2N4pB_Dv2sgTaPYh5r3Lp9RoH7RdtoDm
 securitytrails8:
 - GoZXaC_Cvr59Je5SbajwId0BoXYUnmZ8
-securitytrails9:
+securitytrails:
 - STS9pMfdeqFi1tzsq9c_RIgx06O4R4eX
 shodanx:
 - MBGW6gXPdcQW3kxrSfN30D2ZKtDuRnli
 threatbookx:
 - d4d84e3a817f4200b188b9e32257feb48d0aa147fd1d4cb68e412b5ee54778f1
+
 virustotal1:
-- 09e901442d7b0946b0a3114dcbb3f3f575e9eb825c370b0814fac0a1ed41463f
-virustotal:
-- 42a3df42def764736215c22387ff05555f46f0363af604f703d05834b448f048
-virustotal3:
 - bbb9c57fea9430f9f3a8b9b4a3101ef288b19416b002ac114d599b6203e0a555
+virustotal2:
+- ff65ca0f97cc6a09487d04f4047078074142d48ea1f4af5c5cb90f1bca44190d
+virustotal3:
+- c31c71093b152ab7711cf57356350c8f5ef1063b254bfcf0a1b338775db94769
+virustotal:
+- 34131970ac2e0ad446af3f5ebe29c6620e0a33facb799b813a1f1b99270aad80
+
+
 whoisxmlapix:
 - at_hlHt1u9yj1XY9qxvaobPLlZD5bHzB
 zoomeyeapix:

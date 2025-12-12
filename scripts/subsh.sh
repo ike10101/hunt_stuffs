@@ -93,7 +93,7 @@ fi
 # Determine directory name based on input_file (strip path and extension)
 base_name="$(basename "$input_file")"
 dir_name="${base_name%.*}"
-output_dir="$HOME/vtx_targets/subdomains/$dir_name/"
+output_dir="$HOME/targets/subdomains/$dir_name/"
 
 # Create the output directory if it doesn't exist
 mkdir -p "$output_dir"
@@ -111,7 +111,7 @@ fi
 
 # Run subfinder with the given file and preset options
 subfinder -dL "$input_for_subfinder" -v -timeout 120 -oD "$output_dir" \
--rate-limit 1 -pc "$pc"
+-rls virustotal=3/m -pc "$pc"
 
 # Remove .txt extension from all files in the output directory
 for file in "$output_dir"/*; do
