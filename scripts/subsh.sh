@@ -110,8 +110,8 @@ else
 fi
 
 # Run subfinder with the given file and preset options
-subfinder -dL "$input_for_subfinder" -v -timeout 70 -oD "$output_dir" \
-  -pc "$pc"
+subfinder -dL "$input_for_subfinder" -v -timeout 120 -oD "$output_dir" \
+-rate-limit 1 -pc "$pc"
 
 # Remove .txt extension from all files in the output directory
 for file in "$output_dir"/*; do
