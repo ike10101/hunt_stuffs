@@ -18,8 +18,8 @@ import (
 
 // Output directories (easily changeable)
 const (
-	URLsDir = "/storage/emulated/0/vtx_hunt/otx/urls/"
-	SubsDir = "/storage/emulated/0/vtx_hunt/otx/subs/"
+	URLsDir = "/storage/emulated/0/otx_urls"
+	SubsDir = "/storage/emulated/0/"
 	APIKey  = "6ceeca56254a2caefffdc1af3324a521f5da0d5b767ca491049bb7954e0b1a39"
 )
 
