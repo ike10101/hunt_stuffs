@@ -1,0 +1,12 @@
+/hangfire
+/configurations.xml
+/ganglia/
+/ganglia/?c=ElastiCluster&m=load_one&r=hour&s=by%20name&hc=4&mc=2
+/WEB-INF/classes/argo.properties
+/db/sqlsrv/full.sql
+/files.md5
+/application.wadl
+/_profiler/empty/search/results
+/_debugbar
+/envConfig.json
+/portal/envConfig.json
