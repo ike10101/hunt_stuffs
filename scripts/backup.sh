@@ -8,10 +8,11 @@ COMMIT_MESSAGE=${1:-"update"}
 
 # List of directories to process
 DIRS=(
+  "/storage/emulated/0/Obsidian"
   "/storage/emulated/0/hunt_stuffs"
+  "$HOME/subs_for_hunting"
   "$HOME/info_dis"
   "$HOME/targets"
-  "/storage/emulated/0/Obsidian"
 )
 
 for repo in "${DIRS[@]}"; do
